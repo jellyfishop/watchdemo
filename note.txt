@@ -1,0 +1,32 @@
+lazy-loading
+============
+provide less loading time for high traffic pages
+
+ng g module (module name) --route (module name) --module app.module
+
+json server
+===========
+1,install server
+    npm i --save json-server
+2,run server in server file location
+    npx json-server --watch db.json --port 3000   
+
+
+    behaviour subject
+    -----------------
+    to share data between modules
+    rxjs(reactive extension for js) library of behaviour subject
+    rxjs is used to handle  asynchronous implementation in angular
+    
+
+    activated route in angular
+    --------------------------
+
+    used to access data from urls(access params)
+
+    class  - activatedRoute
+    method - params() (its an asynchronous method)
+    
+
+    
+     

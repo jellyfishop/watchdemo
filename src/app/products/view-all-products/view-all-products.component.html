@@ -1,0 +1,110 @@
+<!-- <div class="container">
+    <div class="container row text-center">
+        <div  class="p-4 col-3">
+          <a (click)="filter('')">  <img style="height: 150px; width: 75%;" class="w-100 rounded-circle" src="https://i.postimg.cc/c4hGhh6Y/download-1.jpg" alt="">
+        <h4 class="pt-2">view All</h4></a>
+       </div>
+    
+
+        <div class="p-4  col-3">
+            <a (click)="filter(1)"> <img style="height: 150px; width: 75%;" class="w-100 rounded-circle" src="https://i.postimg.cc/qMyfygLS/images.jpg" alt="">
+            <h4 class="pt-2">G-SHOCK</h4></a>
+          </div>
+        
+          <div class="p-4  col-3">
+            <a (click)="filter(2)"> <img style="height: 150px; width: 75%;" class="w-100 rounded-circle" src="https://i.postimg.cc/NFNKxpBG/images-1.jpg" alt="">
+            <h4 class="pt-2">LADIES WATCHES</h4></a>
+          </div>
+
+        <div class="p-4  col-3">
+           <a (click)="filter(3)"> <img style="height: 150px; width: 75%;" class="w-100 rounded-circle" src="https://i.postimg.cc/bvt8CLHY/images-2.jpg" alt="">
+            <h4 class="pt-2">CASIO VINTAGE</h4></a>
+        </div>
+   
+    </div>
+</div> -->
+
+<!-- carousal -->
+<div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+
+    </div>
+    <div class="carousel-inner">
+
+      <div class="carousel-item active"><a (click)="filter('')">
+
+        <img  src="https://i.postimg.cc/BQtJNZgk/pxfuel-1.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 style="color: red;">View all</h5>
+        </div></a>
+      </div>
+
+      <div class="carousel-item"><a (click)="filter(1)">
+        <img src="https://i.postimg.cc/gjz2Gv32/Picsart-23-03-21-21-34-42-579.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>G-SHOCK</h5>
+        </div></a>
+      </div>
+
+      <div class="carousel-item"><a (click)="filter(2)"> 
+        <img src="https://i.postimg.cc/wTRS71Fq/Picsart-23-03-21-21-32-54-108.jpg
+        " class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Ladies watches</h5>
+        </div></a>
+      </div>
+
+      <div class="carousel-item"><a (click)="filter(3)">
+        <img src="https://i.postimg.cc/L5HL9wV1/Picsart-23-03-21-18-45-18-422.jpg " 
+        class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 style="color: rgb(0, 0, 0);">CASIO VINTAGE</h5>
+        </div></a>
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+<!-- ==================== -->
+
+ <section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+            <div *ngFor="let i of filterProducts | filter:searchKey:'productName'" class="col mb-5">
+                <div id="d1" class="card h-100"> 
+                    <img class="card-img-top" src="{{i.productImage}}" alt="..." /> 
+                    <div class="card-body p-4"> 
+                         <div class="text-center">
+                             <h5 style="white-space: nowrap;overflow:hidden;text-overflow: ellipsis;max-width: 100ch;" class="fw-bolder" >{{i.productName}}</h5> 
+                             ₹ {{i.price}} <br>
+                            <p style="color: green;">{{i.isAvailiable}}</p>
+                        </div>
+                    </div> 
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="products/view_product/{{i.id}}">View</a></div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>  
+
+ 
+
+
+
